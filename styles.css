@@ -1,0 +1,765 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+
+  body {
+    width: 100vw;
+    overflow-x: hidden; /* Ensures no horizontal scrolling */
+    margin: 0; /* Remove default margin */
+
+  }     
+
+  #responseMessage {
+    position: absolute;
+    
+    top: 4rem;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position by 50% of the element's width */
+    text-align: center;
+    width: 60vw;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.colors {
+    color: #0D1B2A;
+    color:#3723b5;
+    color:#05052b;
+    
+    color:#a1c4fd;
+    color:#def0f8;
+    }
+header{
+    display: inline-block;
+    position: static;
+    z-index: 999;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;;
+        
+}
+
+.theme{
+ display: flex;
+ gap: 1rem;
+ position: absolute;
+ top:1rem;
+ right:1.5rem;
+ cursor: pointer;
+ opacity: 0.8; 
+ transition: transform 0.3s ease, opacity 0.3s ease;
+ 
+}
+.theme:hover{
+     opacity: 1; 
+   }
+
+
+.header-left{
+   flex:1;
+    display: block;
+}
+
+.image-logo{
+    width: 150px;
+    height: auto;
+}
+
+.image-logo-img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+nav { 
+
+    flex:2;
+    margin-top: 1rem;
+    
+}
+
+.menu-ul {
+    list-style-type: none; 
+    }
+
+.menu-li  {
+    
+    font-family: "Poppins", sans-serif; 
+     /*    background: linear-gradient(90deg, #0b0b50, #3723b5); */
+        background-size: 200%;
+        background-position: left;
+
+        padding: 0.5rem 2rem;
+          font-size: 0.8rem;
+        transition: background-position 1s ease; /* Animate position */
+        white-space: nowrap;
+        background: linear-gradient(90deg,  #301e95,#0b0b50);
+     background-size: 200%;
+        background-position: left; 
+    }
+
+    .menu-li a {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+.menu-li a:hover {
+  
+        background-position: right; /* Moves to the end of the gradient */
+        cursor: pointer;
+    }
+    
+
+.logo-bg{
+    background-color: rgb(26, 4, 61);
+}
+.logo {
+    font-family: "Poppins", sans-serif; /* Changed to a modern font */
+    font-weight: 700; /* Bold weight */
+    font-style: italic; /* Keep it italic for a dynamic look */
+    text-transform: uppercase; /* Make text uppercase */
+    letter-spacing: 5px; /* Increase space between letters */
+    text-align: center; /* Center the logo */
+    padding: 20px; /* Add some space around the logo */
+    background: linear-gradient(to right,#FFFFFF 40% ,#1c488b);     -webkit-background-clip: text; /* Apply gradient to text */
+    color: transparent; /* Make text color transparent to show the gradient */
+}
+
+.logo-text {
+    font-size: 4rem; /* Make the logo bigger */
+    font-family: "Poppins", sans-serif; /* Consistent font */
+    text-transform: uppercase;
+    color: transparent; /* Make it transparent to show the gradient */
+}
+
+
+
+.section-image-truck {
+    margin-top: 0;
+    width: 100vw; /* Full width */
+    height: 60vh; /* Full height */
+    position: relative; /* For overlay content */
+    background: url('truck.jpg') no-repeat center top; /* Background image */
+    background-size: cover; /* Ensures it covers the section */
+    background-attachment: fixed; /* Fixes the image in place */
+    font-family: "Poppins", sans-serif; 
+
+}
+
+/* Overlay content styling */
+.overlay-content {
+    position: absolute; /* Allows precise placement */
+    top: 45%; /* Center vertically */
+    left: 70%; /* Center horizontally */
+    width: 40%;
+    transform: translate(-50%, -50%); /* Fine-tuning centering */
+    color: white;
+    z-index: 2;
+}
+
+.overlay-content p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Text shadow for visibility */
+}
+
+
+.overlay-content h1 {
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Text shadow for visibility */
+    font-style: italic;
+}
+
+.overlay-content h2 {
+    margin-top: 4rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Text shadow for visibility */
+  
+}
+
+
+/* Optional: Add a subtle overlay to darken the background */
+.section-image-truck::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, var(--overlay-opacity, 0.2)); /* Default to light theme */
+    z-index: 1;
+    transition: background 1s ease;
+}
+
+
+.history-p{
+    padding-top: 0.5rem;
+    font-weight: 300;
+    font-size: 0.8rem
+}
+.section-history{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid;
+    width: 100%;
+   
+}
+
+.offer{
+    display: flex;
+    border-bottom: 1px solid;
+
+}
+.section-offer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex: 1.6;  /* Arrange items side by side */
+}
+
+.history {
+    font-size: 0.8rem;
+    padding-top: 1rem;
+    padding-right: 3rem;
+    padding-left:1rem ;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6; /* Improve readability */
+
+   
+}
+
+.history h2 {
+    font-size: 1.5rem;
+    font-weight: 900; /* Strong emphasis */
+    margin-bottom: 1rem; /* Space between the title and the text */
+    text-transform: uppercase; /* Uppercase for style */
+    letter-spacing: 1px; /* Increase letter spacing for readability */
+}
+
+.history p {
+    font-size: 1rem; /* Default text size for mobile */
+    margin-bottom: 1.5rem; /* Space between paragraphs */
+    max-width: 100%; /* Ensure text flows well */
+    text-indent: 1rem; /* Indent the first line for better readability */
+}
+
+.history p:last-child {
+    margin-bottom: 0; /* Remove margin on the last paragraph */
+}
+
+.offer{
+    display: flex;
+    flex-direction: column;
+}
+/* Footer Styling */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-section-copy{
+    padding-bottom: 1rem;
+}
+.section-map{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.address-container {
+     
+    font-family: "Poppins", sans-serif; 
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    color: black;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .address-header {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .address-details {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .map-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+  }
+
+
+  .title{
+    font-family: "Poppins", sans-serif; 
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+
+/* Responsive Design */
+
+
+@media (max-width: 600px) {
+    .map-container iframe {
+      height: 200px;
+    }
+  }
+
+/* Mobile-First Design */
+@media (max-width: 768px) {
+    .form {
+        padding: 1rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .history h2 {
+        font-size: 1.5rem;
+    }
+
+    
+
+    .section-offer {
+        flex-direction: row;  /* Arrange items side by side */
+    }
+
+    .offer-services, .offer-services1 {
+        width: 40%;  /* Each div takes up 40% width on larger screens */
+    }
+    
+    .address-container {
+     
+        font-family: "Poppins", sans-serif; 
+        width: 570px;
+    }
+
+    .form {
+        width: 570px;
+}
+}
+
+@media all and (min-width: 800px) {
+
+    .overlay-content {
+        left: 80%; /* Center horizontally */
+    
+    }
+    
+    .title{
+        font-family: "Poppins", sans-serif; 
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+    }
+
+    @media (min-width: 1208px) {
+        .footer-section-copy{
+            padding-bottom: 0rem;
+        }
+        
+        .footer {
+            flex-wrap: nowrap;
+            text-align: center;
+        }
+    
+        .footer-section {
+            flex: 1; /* Equal space for each section */
+            margin: 0;
+        }
+    }
+    
+    
+    .imagesDiv {
+        display: flex;
+        flex: 1;
+        margin:  auto; 
+    }
+    
+    .images {
+        display: flex; /* Ensures child elements can adjust flexibly */
+        gap: 10px; /* Space between image divs */
+        flex-direction: row;
+    }
+    
+    .images .image1 img {
+        width: 80%; /* The image will always be 50% of the window's width */
+        height: auto; /* Maintains the aspect ratio */
+        max-width: 100%; /* Ensures the image doesn't exceed its natural size */
+        display: block; /* Avoids extra space below the image */
+        margin: 0 auto; /* Centers the image horizontally */
+    }
+    
+    
+    .section-contact{
+        padding-top: 3rem;
+        padding-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:1rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid;
+        
+    }
+    
+    
+    .cards-spedition{
+        display: flex;
+        flex-direction: column;
+        gap:1rem;
+     }
+    
+    .section-contact-title{
+        padding-left: 1rem;
+        
+    }
+    
+    /* Card container using flexbox with wrapping */
+    .card-container {
+        position: relative;
+    
+    }
+    /* Updated Card Styling */
+    .card {
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: linear-gradient(90deg,  #301e95,#0b0b50);
+        border: none; /* Remove border for a cleaner look */
+        width: 25rem;
+        min-width: 25rem;
+        height: 12rem;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 5; /* Higher stacking priority */
+    }
+    
+    
+    .card-left {
+        flex-shrink: 0;
+        margin-right: 15px;
+    
+    }
+    
+    .card-left img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%; /* Circular avatar */
+        object-fit: cover;
+        border: 3px solid #ffffff; /* White border for contrast */
+    }
+    
+    .card-right {
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;
+     
+    }
+    
+    .card-right-h1 {
+        font-size: 1.2rem;
+        margin: 0;
+        color: #ffffff; /* White text for contrast */
+        font-family: 'Roboto', sans-serif; /* Modern font */
+        font-weight: bold;
+        letter-spacing: 0.5px; /* Slight spacing for elegance */
+    }
+    
+    .card-right-h2{
+        font-size: 1rem ;
+        margin: 5px 0;
+        color: #dcdcdc; /* Light gray text for subtext */
+        font-family: "Poppins", sans-serif; 
+        font-weight: 200;
+    }
+    
+    .card-right-h2-phone {
+        font-size: 1rem;
+        margin: 5px 0;
+        color: #dcdcdc; /* Light gray text for subtext */
+        font-family: "Poppins", sans-serif; 
+        font-weight: 400;
+    }
+    
+    /* Add hover effect for h2 text */
+    .card-right-h2-phone:hover {
+        color: #ffffff; /* Change to white on hover */
+        transition: color 0.2s ease;
+    }
+    
+    
+    .cards-image {
+        display: none;
+    }
+    
+    .form-section{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    
+    }
+    
+    .form {
+        width: 100%;
+        margin: 2rem auto;
+        padding: 1.5rem;
+        background: lightgray;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .form:hover {
+        transform: scale(1.02); /* Slight zoom on hover */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Labels */
+    .label {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #333333;
+    }
+    
+    /* Input Fields */
+    .email,
+    .message {
+        width: 95%;
+        padding: 0.8rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-family: "Poppins", sans-serif;
+        color: #333333;
+        outline: none;
+        transition: border-color 0.3s ease;
+    }
+    
+    .email:focus,
+    .message:focus {
+        border-color: #2a5298;
+        box-shadow: 0 0 4px rgba(42, 82, 152, 0.2);
+    }
+    
+    /* Textarea */
+    .message {
+        min-height: 120px;
+        resize: vertical; /* Allow resizing only vertically */
+    }
+    
+    /* Button */
+    .btn {
+        width: 95%;
+        padding: 0.8rem 1.5rem;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .btn:hover {
+        background: linear-gradient(135deg, #2a5298, #1e3c72);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    .btn:active {
+        transform: scale(0.98);
+    }
+
+@media all and (min-width: 1265px) {
+
+    header {
+        background-color: #05052b;
+        display: flex;
+        position: fixed;
+        padding-left:1rem;
+        padding-bottom: 1rem;
+    }
+    nav {
+
+        margin-top: 3.5rem;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 1rem;
+    }
+
+    nav a.active {
+        border-bottom: 5px solid #ff3333;
+ 
+    }
+
+    .menu-ul {
+        display: flex;
+        gap:0.5rem;
+        
+        
+    }
+
+    .section-image-truck {
+       height: 100vh; /* Full height */
+
+    
+    }
+    
+
+
+    .overlay-content h1 {
+        font-size: 4rem;
+    }
+
+    .overlay-content h2 {
+        font-size: 2rem;
+       
+    }
+
+    
+.section-history{
+    padding-top: 5rem;
+   padding-right: 4rem;
+   padding-left: 4rem;
+
+   
+}
+
+
+.section-offer {
+    padding-top: 5rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+
+}
+
+
+.section-contact{
+    padding-top: 5rem;
+}
+#offer{
+    margin-top: 2rem;
+}
+    .history h2 {
+        font-size: 1.5rem; /* Make the title even larger */
+    }
+
+
+
+    .offer{
+        flex-direction: row;
+    }
+    .imagesDiv {
+        display: block;
+    }
+    .images {
+        flex-direction: column;
+    }
+    .images .image1 img {
+        width: 60%; /* The image will always be 50% of the window's width */
+        height: auto; /* Maintains the aspect ratio */
+        max-width: 100%; /* Ensures the image doesn't exceed its natural size */
+        display: block; /* Avoids extra space below the image */
+        margin: 0 auto; /* Centers the image horizontally */
+    }
+    
+
+
+    .card-container {
+        justify-content: flex-start; 
+
+    }
+    .cards-spedition{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        height: auto;
+
+    }
+
+    
+   
+    .card{
+        margin-bottom: 4rem;
+    }
+    .cards-image {
+        display: block;
+        position: absolute;
+        z-index: 1; /* Lower stacking priority than the .card */
+        left: 0rem; /* Initially hidden to the left of the card */
+        top: 0;
+        height: 11rem;
+        width: auto;
+        transition: top 0.3s ease; /* Smooth sliding effect */
+    }
+    
+    .card-container:hover .cards-image {
+        /* Aligns next to the card on hover */
+        top:11rem;
+          
+    }
+    
+    .cards-image img {
+        width: 25rem;
+        height: 50%;
+        object-fit: cover; /* Ensure the image scales properly */
+ 
+    }
+    .address-container {
+     
+        font-family: "Poppins", sans-serif; 
+        width: 800px;
+    }
+    .address-header {
+        font-size: 1.5rem;
+      }
+    .form {
+        width: 800px;
+}
+
+.history-p{
+
+    font-size: 1.1rem
+}
+}
+
